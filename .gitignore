@@ -1,0 +1,44 @@
+def intro():
+    print ("You are in a room. There is a door to the north.")
+    print ("You can:")
+    print ("1. Do the macarana.")
+    print ("2. Open the door.")
+    print ("3. Commit suicide.")
+    print ("4. Ragequit.")
+
+    choice = input (">")
+    
+    if choice == "1":
+        print ("You shake your belly like a bowl of jelly.")
+    elif choice == "2":
+        print ("You open the door.")
+        room2()
+    elif choice == "3":
+        print ("GAME OVER")
+    elif choice == "4":
+        print ("GAME OVER")
+    else:
+        print ("You spelt something wrong. Try again.")
+        intro()
+
+def room2():
+    print ("You are in a maze. There is a wolf to the north.")
+    print ("You can:")
+    print ("1. Do the macarana.")
+    print ("2. Open the door.")
+    print ("3. Commit suicide.")
+    print ("4. Go back.")
+
+    choice = input (">")
+    
+    if choice == "1":
+        print ("You shake your belly like a bowl of jelly.")
+    elif choice == "2":
+        print ("You open the door.")
+    elif choice == "3":
+        print ("GAME OVER")
+    elif choice == "4":
+        intro()
+    else:
+        print ("You spelt something wrong. Try again.")
+intro()
