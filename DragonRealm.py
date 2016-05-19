@@ -10,9 +10,12 @@ def displayIntro():
 
 def chooseCave():
     cave = ''
+    print('Which cave will you go into? (1 or 2)')
     while cave != '1' and cave != '2':
-        print('Which cave will you go into? (1 or 2)')
         cave = input()
+
+        if cave != "1" and cave != "2":
+            print("Wrong input. Please press 1, or 2.")
 
     return cave
 
@@ -43,5 +46,3 @@ while playAgain == 'yes' or playAgain == 'y':
 
     print('Do you want to play again? (yes or no)')
     playAgain = input()
-
-
