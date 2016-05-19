@@ -1,0 +1,122 @@
+import time
+
+inventory = []
+
+def intro():
+    print("You find yourself in a dim room, with only one doorway in it")
+    print("There is a bag in the room")
+    print("Input 1 to check what's inside the bag")
+    print("Input 2 to go through the doorway")
+
+    choice = input("\n>")
+
+    if choice != "1" and choice != "2":
+        print("Please input 1, or 2.")
+        intro()
+
+    elif choice == "1":
+        print("You open to bag to find that it's...")
+        time.sleep(1)
+        print("empty of anything but a sweet, fresh smell of fruit.\n")
+        time.sleep(1.5)
+        intro()
+
+    elif choice == "2":
+        print("You walk through the doorway...")
+        room2()
+
+
+def room2():
+    print("Through the doorway is a room with small wooden table with a basket of fruit on top.")
+    print("There's a sturdy-looking door at the other end of the room")
+    print("Input 1 to examine the fruit.")
+    print("Input 2 to examine the door.")
+    print("Input 3 to go back through the doorway.")
+
+    choice = input("\n>")
+
+    if choice != "1" and choice != "2" and choice != "3":
+        print("Please input 1, or 2, or 3.")
+
+    elif choice == "1":
+        print("In the basket you find a variety of fruit; apples, oranges, kiwi, bananas.")
+        fruitBasket()
+
+    elif choice == "2":
+        print(
+            "Examining the door, you find it to be securely locked. There is no peekhole or even a keyhole from this side of the door")
+        room2()
+
+    elif choice == "3":
+        print("You go back through the doorway that you came through")
+        intro()
+
+
+def fruitBasket():
+    print("Input 1 to pick up fruit.")
+    print("Input 2 to leave the fruits alone")
+
+    choice = input("\n>")
+
+    if choice != "1" and choice != "2":
+        print("Please input 1, or 2.")
+
+    elif choice == "1":
+        fruitPick()
+
+    elif choice == "2":
+        room2()
+
+
+def fruitPick():
+
+    global inventory
+
+    print("You decide to pick up fruit. Which fruit would you like to pick up? Input one option")
+    print("Input 1 for apples.")
+    print("Input 2 for oranges.")
+    print("Input 3 for kiwi.")
+    print("Input 4 for bananas.")
+    print("Input 5 to cancel")
+
+    choice = input("\n>")
+
+    if choice != "1" and choice != "2" and choice != "3" and choice != "4" and choice != "5":
+        print("Please input 1, or 2, or 3, or 4")
+
+    elif choice == "1":
+        print("You pick up some apples")
+        inventory.append("apples")
+        print("You know have the following in your inventory: ")
+        print(*inventory, sep="\n")
+
+
+    elif choice == "2":
+        print("You pick up some oranges")
+        inventory.append("oranges")
+        print("You know have the following in your inventory: ")
+        print(*inventory, sep="\n")
+
+
+    elif choice == "3":
+        print("You pick up some kiwi")
+        inventory.append("kiwi")
+        print("You know have the following in your inventory: ")
+        print(*inventory, sep="\n")
+
+
+    elif choice == "4":
+        print("You pick up some bananas")
+        inventory.append("bananas")
+        print("You know have the following in your inventory:")
+        print(*inventory, sep = "\n")
+
+
+    elif choice == "5":
+        print("Nevermind.")
+        room2()
+
+
+
+intro()
+
