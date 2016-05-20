@@ -1,6 +1,7 @@
 import time
 import os
 import easygui
+from PIL import Image
 
 inventory = []
 
